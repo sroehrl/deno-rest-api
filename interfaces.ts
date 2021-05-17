@@ -26,6 +26,6 @@ export interface ClientRequest{
     url: string,
     params: Parameters,
     method: string,
-    body: object,
+    body: any,
     auth: Auth
 }
