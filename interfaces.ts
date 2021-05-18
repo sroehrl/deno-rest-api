@@ -3,11 +3,17 @@ import {Auth} from "./Auth.ts";
 type Parameters = {
     [key: string]: any
 }
+export enum Method {
+    POST = "POST",
+    GET = "GET",
+    PUT = "PUT",
+    DELETE = "DELETE"
+}
 
 export interface RouteDefinition{
     path: string,
     handler: Function,
-    method: string,
+    method: Method | string,
     params?: Parameters
     use?:Array<Function>
 }

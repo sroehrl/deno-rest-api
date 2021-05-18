@@ -45,7 +45,7 @@ async function startListener(){
                 try{
                     authenticated = await auth.validate(authHeader)
                 } catch (e) {
-                    console.log('unauthenticated');
+                    // console.log('unauthenticated call');
                 }
             }
             const answerMachine = (answer: any) =>{
@@ -59,7 +59,7 @@ async function startListener(){
                 method: request.method,
                 respond: answerMachine
             }
-            response(internalRequest, found, auth)
+            await response(internalRequest, found, auth)
         } else {
             const headers = new Headers();
             headers.set('Content-Type','application/json')

@@ -1,2 +1,3 @@
 export  * from './interfaces.ts';
-export  * from './simpleServer.ts';
+export  * from './SimpleServer.ts';
+export * from './SimpleUser.ts'
