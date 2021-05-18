@@ -71,7 +71,12 @@ async function startListener(){
 async function readBody(bodyReader: any){
     const buf: Uint8Array = await Deno.readAll(bodyReader);
     const b = new TextDecoder();
-    return JSON.parse(b.decode(buf))
+    try{
+        return JSON.parse(b.decode(buf))
+    } catch (e) {
+        return {}
+    }
+
 }
 
 function matchRequest(method:string,url:string): RouteDefinition|null {

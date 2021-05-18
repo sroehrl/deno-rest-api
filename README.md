@@ -16,12 +16,12 @@ startSimpleServer([
     {
         path:'/api/test',
         method:Method.GET,
-        handler:() => {test:'me'}
+        handler:() => ({test:'me'})
     },
     {
         path: '/api/read-parmas/:name',
         method: Method.GET,
-        handler: (client: ClientRequest) => {name:client.params.name}
+        handler: (client: ClientRequest) => ({name:client.params.name})
     },
     {
         path: '/api/yes-or-no',
