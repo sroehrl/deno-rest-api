@@ -35,3 +35,6 @@ startSimpleServer([
     }
 ])
 ```
+
+## to run
+`deno run --allow-net --allow-read --allow-write --watch {your-file.ts}`
